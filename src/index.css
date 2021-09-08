@@ -1,13 +1,108 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: "Lato";
+  min-height: 100vh;
+  background-color: #a9c9ff;
+  background: linear-gradient(45deg, #a9c9ff 0%, #ffbbec 100%);
+  padding: 4rem 2rem;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+form {
+  position: relative;
+  overflow: hidden;
+  padding: 0 2rem;
+  border-radius: 3px;
+}
+
+form input {
+  outline: none;
+  border: none;
+  background: none;
+  width: 100%;
+  padding: 1rem 0rem;
+  font-size: 1rem;
+}
+
+form input::placeholder {
+  font-size: 0.9rem;
+  color: #bbbbbb;
+}
+
+form span {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-48%);
+  right: 1rem;
+  transition: 0.3s all ease-in-out;
+}
+
+form span.hidden {
+  right: -100px;
+}
+form span.visible {
+  right: 1rem;
+}
+
+.container {
+  width: min(550px, 100%);
+  margin: auto;
+}
+
+.glass-effect {
+  background-color: #ffffff;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.3)
+  );
+  backdrop-filter: blur(5rem);
+}
+
+.draggable-list {
+  margin-top: 2rem;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.draggable-list li {
+  display: flex;
+}
+
+.draggable-list li.over div {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.draggable-list li span {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(169, 201, 255, 0.3);
+  font-weight: 700;
+}
+
+.draggable-list li div {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  cursor: default;
+}
+
+.draggable-list li div:dr .draggable-list li:not(:last-of-type) {
+  border-bottom: 1px solid rgba(169, 201, 255, 0.3);
 }
